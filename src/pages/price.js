@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 const Price = (props) => {
     const apiKey = "46E70F54-C6A0-4FF2-AF6C-375BF7383736"
     const symbol = props.match.params.symbol
-    const url = `http://rest.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`;
+    const url = `https://rest.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`;
     const [coin, setCoin] = useState(null)
     const getCoin = async () => {
         const response = await fetch(url);
@@ -12,7 +12,7 @@ const Price = (props) => {
     useEffect(() => {
         getCoin()
     }, [])
-    
+
     const loaded = () => {
         return (
             <div>
